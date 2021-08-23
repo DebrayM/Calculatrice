@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculatrice</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Calculatrice</h1>
+    <h2>Les opérations possibles sont les suivantes :</h2>
+    <ol>
+        <li>addition</li>
+        <li>soustraction</li>
+        <li>division</li>
+        <li>multiplication</li>
+        <li>modulo</li>
+    </ul>
+    <p>Le résultat de votre opération sera visible dans votre console Javascipt (F12 / Console)</p>
+
+    <script>
+        var y = 1;
+        var result = 0;
+        var op1 = 0;
+        var op2 = 0;
+        y = parseInt(prompt("Entrer la valeur de l'opération choisie (valeur entre 1 et 5) : ", "1"),10);
+        if ((y >5) || (y <1) == true) {
+            alert("Vous devez entrer une valeur entre 1 et 5 pour choisir votre opération.");
+        }
+        else{
+            /* l'opération est valide */
+            op1 = parseInt(prompt("Entrer la valeur de votre première opérande : ", "0"),10);
+            if (typeof(op1) == "number" == true) {
+                op2 = parseInt(prompt("Entrer la valeur de votre seconde opérande : ", 0),10);
+                if (typeof(op1) == "number" == true) {
+                    switch (y) {
+                    case 1:
+                        result = op1 + op2;
+                        console.log("voici votre résultat : " + result);
+                        break;
+                    case 2:
+                        result = op1 - op2;
+                        console.log("voici votre résultat : " + result);
+                        break;
+                        break;
+                    case 3:
+                        if (op2 == 0) {
+                            console.log("Seconde opérande en ereur : " + op2); 
+                            break;
+                        }
+                        else {
+                            result = op1 / op2;
+                            console.log("voici votre résultat : " + result);
+                            break;
+                        }
+                    case 4:
+                        result = op1 * op2;
+                        console.log("voici votre résultat : " + result);
+                        break;
+                    case 5:
+                        if (op2 == 0) {
+                            console.log("Seconde opérande en ereur : " + op2);
+                            break;
+                        }
+                        else {
+                            result = op1 % op2;
+                            console.log("voici votre résultat : " + result);
+                            break;
+                        }
+                    }
+                }
+                else {
+                    console.log("valeur incorrecte");
+                }
+            }
+            else {
+                    console.log("valeur incorrecte");
+            }
+        }
+    </script>
+
+</body>
+</html>
